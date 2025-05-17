@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Docs",
+        "tab": "Setup",
         "groups": [
           {
             "group": "Get Started",
@@ -24,7 +24,7 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Integrations",
         "groups": [
           {
             "group": "API Documentation",
