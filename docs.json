@@ -27,18 +27,15 @@
         "tab": "Integrations",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "Programmatic Lua Integration",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/lua-integrations"
             ]
           },
           {
             "group": "Endpoint Examples",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/endpoint/loader"
             ]
           }
         ]
