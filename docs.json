@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "9Auth Documentation",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -58,19 +58,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Discord",
+          "href": "https://discord.gg/xesWuNzge2",
+          "icon": "discord"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
+          "anchor": "Dashboard",
+          "href": "https://9auth.xyz",
           "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
         }
       ]
     }
