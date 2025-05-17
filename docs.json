@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "9Auth Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+  "primary": "#0B6B2F",  
+  "light": "#00B56B",  
+  "dark": "#003D26"
   },
   "favicon": "/favicon.svg",
   "navigation": {
