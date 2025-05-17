@@ -1,35 +1,59 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "9auth Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0F172A",
+    "light": "#4ADE80",
+    "dark": "#1E293B"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Getting Started",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Introduction",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "why-9auth",
+              "setup"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Core Concepts",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "concepts/hwid",
+              "concepts/auth-flow",
+              "concepts/script-protection",
+              "concepts/discord-integration",
+              "concepts/data-policy"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Developer Guide",
+        "groups": [
+          {
+            "group": "Script Integration",
+            "pages": [
+              "developers/roblox-lua",
+              "developers/encryption",
+              "developers/obfuscation",
+              "developers/api-calls",
+              "developers/error-handling"
+            ]
+          },
+          {
+            "group": "Dashboard & Bot",
+            "pages": [
+              "dashboard/overview",
+              "dashboard/upload-script",
+              "dashboard/manage-users",
+              "dashboard/ban-users",
+              "dashboard/analytics"
             ]
           }
         ]
@@ -38,18 +62,34 @@
         "tab": "API Reference",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "Endpoints",
             "pages": [
-              "api-reference/introduction"
+              "api/authenticate",
+              "api/validate",
+              "api/hwid-check",
+              "api/metrics"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Examples",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "examples/luau-auth",
+              "examples/discord-bot-usage",
+              "examples/logging-best-practices"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Monetization",
+        "groups": [
+          {
+            "group": "Key System",
+            "pages": [
+              "monetization/keys",
+              "monetization/linkvertise",
+              "monetization/discord-distribution",
+              "monetization/anti-abuse"
             ]
           }
         ]
@@ -58,45 +98,45 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Main Website",
+          "href": "https://9auth.dev",
+          "icon": "globe"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
+          "anchor": "Discord Support",
+          "href": "https://discord.gg/yourserver",
           "icon": "slack"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Status",
+          "href": "https://status.9auth.dev",
+          "icon": "check-circle"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/9auth-light.svg",
+    "dark": "/logo/9auth-dark.svg"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@9auth.dev"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Go to Dashboard",
+      "href": "https://dashboard.9auth.dev"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/9authdev",
+      "github": "https://github.com/9auth",
+      "discord": "https://discord.gg/yourserver"
     }
   }
 }
