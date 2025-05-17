@@ -18,23 +18,7 @@
             "pages": [
               "index",
               "dashboard",
-              "bot"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Integrations",
-        "groups": [
-          {
-            "group": "Programmatic Lua Integration",
-            "pages": [
-              "api-reference/lua-integrations"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
+              "bot",
               "api-reference/endpoint/loader"
             ]
           }
