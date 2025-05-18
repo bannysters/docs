@@ -1,0 +1,27 @@
+---
+title: '_G.LastHwidResetUnix'
+---
+
+## ♻️ LastHwidResetUnix
+
+The **Unix timestamp** of the user's **last HWID reset**.
+
+<Callout type="info" emoji="🔐">
+Use this to enforce cooldowns between HWID resets.
+</Callout>
+
+### Example
+
+```lua
+print(_G.LastHwidResetUnix)
+-- Output: 1690000000
+```
+
+### Use Case
+
+```lua
+local hoursSinceReset = (os.time() - _G.LastHwidResetUnix) / 3600
+if hoursSinceReset < 24 then
+    warn("You must wait before resetting HWID again.")
+end
+```

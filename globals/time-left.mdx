@@ -1,0 +1,29 @@
+---
+title: '_G.AuthTimeLeftUnix'
+---
+
+## ⏳ AuthTimeLeftUnix
+
+The **remaining time** on the key, in **Unix seconds**.
+
+<Callout type="info" emoji="📆">
+Convert this to a readable date/time using `os.date` or subtract from `os.time()` to get remaining duration.
+</Callout>
+
+### Example
+
+```lua
+print(_G.AuthTimeLeftUnix)
+-- Output: 1700000000
+```
+
+### Use Case
+
+```lua
+local secondsLeft = _G.AuthTimeLeftUnix - os.time()
+print("Time left: " .. secondsLeft .. " seconds")
+```
+
+Use this to:
+- Show countdowns in UI  
+- Prevent usage after expiry

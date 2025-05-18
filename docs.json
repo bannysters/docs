@@ -33,6 +33,22 @@
         ]
       },
       {
+        "tab": "Integrations",
+        "groups": [
+          {
+            "group": "Globals",
+            "pages": [
+              "globals/discord-username",
+              "globals/discord-id",
+              "globals/total-days",
+              "globals/time-left",
+              "globals/usage-count",
+              "globals/last-hwid-reset"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "API Reference",
         "groups": [
           {
