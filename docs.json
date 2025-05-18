@@ -50,6 +50,17 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Compatability",
+        "groups": [
+          {
+            "group": "Supported Executors",
+            "pages": [
+              "executors"
+            ]
+          }
+        ]
       }
     ]
   },
