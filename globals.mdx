@@ -1,0 +1,137 @@
+---
+title: 'Global Variables'
+---
+
+When using 9Auth, your script is automatically injected with global variables containing authentication info. You can use these to personalize features, enforce access control, and track usage.
+
+---
+
+## 🆔 Discord Integration
+
+### **_G.AuthDiscordUsername**
+
+Represents the user’s Discord tag (e.g., `someuser#1234`).
+
+<Callout type="info" emoji="💡">
+Returns `"N/A"` if the user is not linked to a Discord account.
+</Callout>
+
+**Example:**
+
+```lua
+print(_G.AuthDiscordUsername)
+-- Output: someuser#1234
+```
+
+---
+
+### **_G.AuthDiscordId**
+
+User’s unique Discord ID (numeric string).
+
+<Callout type="warning" emoji="⚠️">
+Returns `"N/A"` if the user is not linked to a Discord account.
+</Callout>
+
+**Example:**
+
+```lua
+print(_G.AuthDiscordId)
+-- Output: 123456789012345678
+```
+
+---
+
+## 📅 Subscription Duration
+
+### **_G.AuthDays**
+
+The total length of the user’s key in **days**.
+
+**Example:**
+
+```lua
+print(_G.AuthDays)
+-- Output: 30
+```
+
+<Callout type="info" emoji="🛠️">
+This reflects the original duration of the key, not the time left.
+</Callout>
+
+---
+
+### **_G.AuthTimeLeftUnix**
+
+The number of **seconds remaining** until the user’s key expires, in Unix timestamp format.
+
+**Example:**
+
+```lua
+print(_G.AuthTimeLeftUnix)
+-- Output: 1700000000
+```
+
+**To show time remaining:**
+
+```lua
+local secondsLeft = _G.AuthTimeLeftUnix - os.time()
+print("Time left: " .. secondsLeft .. " seconds")
+```
+
+<Callout type="info" emoji="📆">
+Convert to a human-readable format using `os.date()` or subtract from `os.time()`.
+</Callout>
+
+---
+
+## 📊 Usage Tracking
+
+### **_G.AuthUsageCount**
+
+The number of times the script has been executed by the current user.
+
+**Example:**
+
+```lua
+print(_G.AuthUsageCount)
+-- Output: 5
+```
+
+**Use Cases:**
+
+- Execution limits  
+- Feature unlocking based on activity  
+- Script analytics
+
+---
+
+## ♻️ HWID Management
+
+### **_G.LastHwidResetUnix**
+
+The Unix timestamp (in seconds) of the user’s last hardware ID reset.
+
+**Example:**
+
+```lua
+print(_G.LastHwidResetUnix)
+-- Output: 1690000000
+```
+
+**Cooldown Check Example:**
+
+```lua
+local hoursSinceReset = (os.time() - _G.LastHwidResetUnix) / 3600
+if hoursSinceReset < 24 then
+    warn("You must wait before resetting HWID again.")
+end
+```
+
+<Callout type="info" emoji="🔐">
+Useful for enforcing HWID reset cooldowns or tracking reset history.
+</Callout>
+
+---
+
+> These globals are available immediately at script start. No additional setup is required.

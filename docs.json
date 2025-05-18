@@ -26,8 +26,7 @@
             "group": "Core Features",
             "pages": [
               "dashboard",
-              "bot",
-              "integrations"
+              "bot"
             ]
           }
         ]
@@ -36,14 +35,9 @@
         "tab": "Integrations",
         "groups": [
           {
-            "group": "Globals",
+            "group": "Integrations",
             "pages": [
-              "globals/discord-username",
-              "globals/discord-id",
-              "globals/total-days",
-              "globals/time-left",
-              "globals/usage-count",
-              "globals/last-hwid-reset"
+              "globals"
             ]
           }
         ]
