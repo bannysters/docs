@@ -17,7 +17,8 @@
             "group": "Overview",
             "pages": [
               "index",
-              "backend"
+              "backend",
+              "executors"
             ]
           },
           {
@@ -47,17 +48,6 @@
             "group": "Endpoints",
             "pages": [
               "api-reference/endpoint/loader"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Compatability",
-        "groups": [
-          {
-            "group": "Misc",
-            "pages": [
-              "executors"
             ]
           }
         ]
