@@ -1,4 +1,27 @@
 ---
 title: 'Get Script Loader'
-openapi: 'GET /loader/SERVER_ID/SCRIPT_ID'
+openapi: 'GET /loader/{serverId}/{scriptId}'
 ---
+
+## Description
+
+Fetch the script loader for a specific server and script.  
+This endpoint returns a loader script that users can run in Roblox to start using your authenticated script.
+
+## Path Parameters
+
+| Name       | Type   | Description                         |
+|------------|--------|-------------------------------------|
+| serverId   | string | Discord server ID                   |
+| scriptId   | string | Unique ID of the script             |
+
+## Response
+
+Returns the loader script for the specified server and script.
+
+### Example Response (Lua)
+
+```
+-- 9Auth Script Loader
+print("Returned code here")
+```
