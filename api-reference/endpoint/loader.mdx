@@ -6,19 +6,37 @@ sidebarTitle: "Get Script Loader"
 
 ## Description
 
-Fetch the script loader for a specific server and script.\
-This endpoint returns a loader script that users can run in Roblox to start using your authenticated script.
+Retrieve the script loader for a specific Discord server and script.  
+This endpoint returns a Lua script that users can run in Roblox to begin using your authenticated script.
 
 ## Path Parameters
 
-| Name     | Type   | Description             |
-| -------- | ------ | ----------------------- |
-| serverId | string | Discord server ID       |
-| scriptId | string | Unique ID of the script |
+| Name     | Type   | Description               |
+|----------|--------|---------------------------|
+| serverId | string | Discord server ID         |
+| scriptId | string | Unique identifier of the script |
+
+## Example Request
+
+To retrieve the loader, send a `GET` request to the following URL:
+
+**Endpoint Format**  
+```
+GET https://9auth.xyz/loader/{serverId}/{scriptId}  
+```
+
+### Example
+
+**Request**  
+``` 
+GET https://9auth.xyz/loader/123456789012345678/abc123script  
+```
+
+> Replace `123456789012345678` with your actual Discord server ID and `abc123script` with your script's unique ID.
 
 ## Response
 
-Returns the loader script for the specified server and script.
+Returns a Lua script loader for the specified server and script.
 
 ### Example Response (Lua)
 
