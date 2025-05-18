@@ -55,7 +55,7 @@
         "tab": "Compatability",
         "groups": [
           {
-            "group": "Supported Executors",
+            "group": "Misc",
             "pages": [
               "executors"
             ]
