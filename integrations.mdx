@@ -1,0 +1,13 @@
+# 🔌 Scriptable Integrations
+
+Use these injected global Lua variables to access authentication data inside your Roblox scripts.
+
+```lua
+_G.AuthDiscordUsername = "username#1234" -- or "N/A"
+_G.AuthDiscordId       = "123456789012345678" -- or "N/A"
+_G.AuthDays            = 30 -- total key length in days
+_G.AuthTimeLeftUnix    = 1700000000 -- seconds until key expires
+_G.AuthUsageCount      = 5 -- number of executions
+_G.LastHwidResetUnix   = 1690000000 -- Unix seconds of last reset
+```
+These variables let you personalize access control, restrict features, or track usage in-game.
