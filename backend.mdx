@@ -1,0 +1,65 @@
+---
+title: "About the Backend"
+sidebarTitle: "About the Backend"
+---
+
+## Overview
+
+The 9Auth backend is built with security, performance, and integrity as top priorities. It is designed to handle all aspects of Roblox script authentication while protecting both developers and users from tampering, leaks, and reverse engineering attempts.
+
+Everything is rendered **server-side**, meaning users never receive raw or vulnerable script logic directly. Instead, they receive secure, obfuscated loaders dynamically generated per request — making it incredibly difficult to intercept or manipulate.
+
+## Key Features
+
+### 🔐 Secure Key and User Data Storage
+
+All authentication keys, user metadata, and permissions are securely stored using encrypted databases. Sensitive values are never exposed, and data access is strictly controlled by permission layers and key validation logic.
+
+### 🧠 Dynamic Obfuscation & Virtualization
+
+Each script loader is uniquely obfuscated on-demand:
+
+- Dynamic code obfuscation ensures no two users ever receive the same script.
+- Virtualization techniques rewrite parts of scripts into secure virtual opcodes.
+- Internal logic is restructured to resist static and dynamic analysis.
+
+This approach significantly increases difficulty for attackers attempting to reverse engineer or tamper with scripts.
+
+### 🛡️ Tamper Protection & Anti-Hooking
+
+Loaders come with multiple built-in protections:
+
+- **Tamper detection:** Scripts verify runtime integrity and environment consistency.
+- **Anti-hooking measures:** Key Roblox functions are monitored or hardened to detect unauthorized modifications.
+- **Environment fingerprinting:** Identifies and responds to suspicious execution contexts.
+
+If any tampering is detected, scripts can immediately self-terminate or refuse to run.
+
+Here’s a clearer and more technically accurate rewrite of that section based on your explanation:
+
+
+### 🔒 End-to-End Encryption
+
+Sensitive client data — including user info, keys, and session metadata — is encrypted before transmission using a **dynamic, multi-layered encryption system**.
+
+- The encryption process uses **multiple distinct algorithms**, layered onion-style.
+- This makes every encrypted payload unique, even if the underlying data is identical.
+- The result is maximum protection against man-in-the-middle attacks, replay attacks, and payload analysis.
+- Only sensitive data is encrypted — not the entire script — to maintain performance while ensuring security where it matters most.
+
+This advanced system ensures that intercepted traffic reveals nothing useful, and any decryption attempt is met with extreme computational difficulty.
+
+
+### 💡 Server-Side Rendering
+
+Unlike static script distribution platforms, **9Auth renders all loaders server-side** at request time:
+
+- Obfuscation, encryption, and logic transformations happen on the fly.
+- Server logic adapts based on who is requesting, how often, and under what conditions.
+- This makes it practically impossible to "scrape" or cache meaningful code.
+
+## Summary
+
+9Auth is designed from the ground up to deliver maximum script protection with minimal developer effort. By combining advanced server-side architecture with real-time obfuscation, anti-tamper measures, and secure storage, 9Auth provides a best-in-class solution for authenticating and protecting Roblox scripts.
+
+Your code stays safe. Your users stay verified. Your project stays yours.
