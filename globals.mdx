@@ -1,39 +1,38 @@
 ---
-title: 'Global Variables'
+title: "Global Variables"
 ---
 
-When using 9Auth, your script is automatically injected with global variables containing authentication info. You can use these to personalize features, enforce access control, and track usage.
+
+These global variables are injected into your Lua environment when using 9Auth. They help you personalize user experience, enforce access control, and track usage. No manual setup required — just reference them directly in your scripts.
 
 ---
 
-## 🆔 Discord Integration
+## 🧑‍💻 Discord Information
 
-### **_G.AuthDiscordUsername**
+### `AuthDiscordUsername`
 
-Represents the user’s Discord tag (e.g., `someuser#1234`).
+> **Type:** `string`\
+> **Example:** `"user#1234"` or `"N/A"`
 
-<Callout type="info" emoji="💡">
-Returns `"N/A"` if the user is not linked to a Discord account.
-</Callout>
+The user’s Discord username and discriminator. Use this to personalize in-game experiences or audit usage.
 
-**Example:**
+**Usage:**
 
 ```lua
 print(_G.AuthDiscordUsername)
--- Output: someuser#1234
+-- Output: user#1234
 ```
 
 ---
 
-### **_G.AuthDiscordId**
+### `AuthDiscordId`
 
-User’s unique Discord ID (numeric string).
+> **Type:** `string`\
+> **Example:** `"123456789012345678"` or `"N/A"`
 
-<Callout type="warning" emoji="⚠️">
-Returns `"N/A"` if the user is not linked to a Discord account.
-</Callout>
+A unique, numeric Discord user ID. Useful for linking game activity to Discord accounts.
 
-**Example:**
+**Usage:**
 
 ```lua
 print(_G.AuthDiscordId)
@@ -42,84 +41,68 @@ print(_G.AuthDiscordId)
 
 ---
 
-## 📅 Subscription Duration
+## ⏱️ Key Duration & Time Remaining
 
-### **_G.AuthDays**
+### `AuthDays`
 
-The total length of the user’s key in **days**.
+> **Type:** `number`\
+> **Example:** `30`
 
-**Example:**
+Total duration of the user’s key in days. This does not decrease over time.
+
+**Usage:**
 
 ```lua
 print(_G.AuthDays)
 -- Output: 30
 ```
 
-<Callout type="info" emoji="🛠️">
-This reflects the original duration of the key, not the time left.
-</Callout>
-
 ---
 
-### **_G.AuthTimeLeftUnix**
+### `AuthTimeLeftUnix`
 
-The number of **seconds remaining** until the user’s key expires, in Unix timestamp format.
+> **Type:** `number` (Unix timestamp)\
+> **Example:** `1700000000`
 
-**Example:**
+Time remaining on the user's key in seconds. Useful for calculating time-based restrictions.
 
-```lua
-print(_G.AuthTimeLeftUnix)
--- Output: 1700000000
-```
-
-**To show time remaining:**
+**Convert to seconds left:**
 
 ```lua
 local secondsLeft = _G.AuthTimeLeftUnix - os.time()
 print("Time left: " .. secondsLeft .. " seconds")
 ```
 
-<Callout type="info" emoji="📆">
-Convert to a human-readable format using `os.date()` or subtract from `os.time()`.
-</Callout>
-
 ---
 
-## 📊 Usage Tracking
+## 📈 Usage Metrics
 
-### **_G.AuthUsageCount**
+### `AuthUsageCount`
 
-The number of times the script has been executed by the current user.
+> **Type:** `number`\
+> **Example:** `5`
 
-**Example:**
+Number of times the script has been executed by the current user. Great for tracking or limiting usage.
+
+**Usage:**
 
 ```lua
 print(_G.AuthUsageCount)
 -- Output: 5
 ```
 
-**Use Cases:**
-
-- Execution limits  
-- Feature unlocking based on activity  
-- Script analytics
-
 ---
 
-## ♻️ HWID Management
+## 🔁 HWID Management
 
-### **_G.LastHwidResetUnix**
+### `LastHwidResetUnix`
 
-The Unix timestamp (in seconds) of the user’s last hardware ID reset.
+> **Type:** `number` (Unix timestamp)\
+> **Example:** `1690000000`
 
-**Example:**
+The time the user last reset their HWID. Use this to enforce cooldowns on resets.
 
-```lua
-print(_G.LastHwidResetUnix)
--- Output: 1690000000
-```
-
-**Cooldown Check Example:**
+**Check cooldown logic:**
 
 ```lua
 local hoursSinceReset = (os.time() - _G.LastHwidResetUnix) / 3600
@@ -128,10 +111,6 @@ if hoursSinceReset < 24 then
 end
 ```
 
-<Callout type="info" emoji="🔐">
-Useful for enforcing HWID reset cooldowns or tracking reset history.
-</Callout>
-
 ---
 
-> These globals are available immediately at script start. No additional setup is required.
+> ✅ These variables are preloaded and safe to use at runtime. You don’t need to call or fetch anything — just access them directly through `_G`.
