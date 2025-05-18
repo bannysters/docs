@@ -11,17 +11,14 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Overview",
-        "groups": [
-          {
-            "group": "Welcome",
-            "pages": ["index"]
-          }
-        ]
-      },
-      {
         "tab": "Platform",
         "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "index"
+            ]
+          },
           {
             "group": "Core Features",
             "pages": [
