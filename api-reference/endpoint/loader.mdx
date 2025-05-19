@@ -54,8 +54,7 @@ local response = httpRequest({
     }
 })
 
-local data = HttpService:JSONDecode(response.Body)
-print(data)
+print(response.text)
 ```
 
 ```javascript Node JS
@@ -65,7 +64,7 @@ const script_id = "ABC1234script";
 
 axios.post(`https://9auth.xyz/loader/${server_id}/${script_id}`)
   .then(response => {
-    console.log(response.data);
+    console.log(response.text);
   })
   .catch(error => {
     console.error('Error:', error.response.data);
@@ -80,8 +79,7 @@ script_id = "ABC1234script"
 url = "https://9auth.xyz/loader/" + server_id + "/" + script_id
 
 response = requests.post(url)
-print(response.json())
-
+print(response.text)
 ```
 
 </CodeGroup>
