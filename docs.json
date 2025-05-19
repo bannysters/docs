@@ -45,7 +45,7 @@
         "tab": "Integrations",
         "groups": [
           {
-            "group": "Integrations",
+            "group": "Lua Interfacing",
             "pages": [
               "globals"
             ]
