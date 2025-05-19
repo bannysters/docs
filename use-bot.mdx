@@ -1,11 +1,8 @@
 ---
-title: Getting Started with the 9Auth Bot
+title: 9AUTH Discord Bot
 description: A step-by-step guide to setting up and using the 9Auth Discord bot for managing script access.
 ---
 
-import { Callout } from "some-ui-library";
-
-# Getting Started with the 9Auth Bot
 
 The 9Auth bot lets both users and admins manage script access directly from Discord. Follow these steps to get it up and running in your server.
 
@@ -14,10 +11,7 @@ The 9Auth bot lets both users and admins manage script access directly from Disc
 </Callout>
 
 ## 1. Invite the Bot to Your Server  
-1. Go to the 9Auth website or use the bot invite link provided in your dashboard.  
-2. Select the target server where you want to enable 9Auth functionality.  
-3. Click **Authorize** and complete any CAPTCHA/permission prompts.  
-4. You should see **9Auth Bot** appear in your server’s member list.
+1. Complete the Dashboard Setup and authorize the bot to join one of your servers.
 
 ## 2. Create a Dedicated Channel for Script Panels  
 1. In your Discord server, create a new text channel (e.g., `#script-panel`, `#auth-portal`, or similar).  
@@ -82,19 +76,6 @@ This gives **@newUser** a 12‑hour trial for **myFirstScript**.
 
 > **Note:** Only users with “Manage Server,” “Administrator,” or a designated “Script Owner” role can run these admin commands.
 
-## 6. Best Practices & Tips  
-
-- **One Panel per Script**  
-- If you have multiple scripts, create separate panels (in separate channels or the same channel) by running `/panel` again and selecting a different script each time.  
-- **Channel Permissions**  
-- Lock down your **#script-panel** channel so that only users with roles you trust can post new panels.  
-- Allow @everyone to click buttons, but restrict “Send Messages” to admins/owners only.
-- **Updating a Panel**  
-- If you rename or re-upload a script in the dashboard, delete the old panel message in Discord, then rerun `/panel` to generate a fresh panel reflecting any changes.
-- **Monitoring Usage**  
-- Use `/scripts` to verify who currently has access.  
-- Check your 9Auth dashboard for detailed analytics on key redemptions and HWID resets.
-
 ---
 
-You’re all set! Your Discord community can now claim keys, redeem them, and fetch their loader scripts entirely through Discord—no need to leave the server. Enjoy streamlined script access management with 9Auth!
+You’re all set! Your Discord community can now claim keys, redeem them, and fetch their loader scripts entirely through Discord. Enjoy streamlined script access management with 9Auth!
