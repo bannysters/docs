@@ -6,7 +6,7 @@ sidebarTitle: "Get Key Info"
 
 ## Description
 
-Fetch information about a specific key associated with a script in a Discord server.  
+Fetch information about a specific key associated with a script in a Discord server.\
 This endpoint is used to retrieve details such as the key owner’s username, usage count, expiration time, and more.
 
 It is primarily used by script developers to verify and debug key usage.
@@ -15,11 +15,11 @@ It is primarily used by script developers to verify and debug key usage.
 
 Send a JSON object with the following parameters:
 
-| Name      | Type   | Required | Description                         |
-|-----------|--------|----------|-------------------------------------|
-| guildId   | string | Yes      | Discord server ID that owns script  |
-| scriptId  | string | Yes      | Unique identifier of the script     |
-| key       | string | Yes      | The key to look up                  |
+| Name     | Type   | Required | Description                        |
+| -------- | ------ | -------- | ---------------------------------- |
+| guildId  | string | Yes      | Discord server ID that owns script |
+| scriptId | string | Yes      | Unique identifier of the script    |
+| key      | string | Yes      | The key to look up                 |
 
 ### Example Request Body
 
@@ -35,20 +35,89 @@ Send a JSON object with the following parameters:
 
 **POST** https://9auth.xyz/public-api/get-key-info
 
+## Example Requests
+
+<CodeGroup>
+
+```lua Lua
+local HttpService = game:GetService("HttpService")
+
+local httpRequest =
+    (syn and syn.request) or
+    (SENTINEL_V2 and function(opt)
+        return {
+            StatusCode = 200,
+            Body = request(opt.Url, opt.Method, opt.Body or "")
+        }
+    end) or
+    request or
+    function()
+        return { Body = "{}" }
+    end
+
+local response = httpRequest({
+    Url = "https://9auth.xyz/public-api/get-key-info",
+    Method = "POST",
+    Headers = {
+    ["Content-Type"] = "application/json"
+  },
+  Body = HttpService:JSONEncode({
+    guildId = "123456789012345678",
+    scriptId = "abc123script",
+    key = "ABC1234"
+  })
+})
+
+local data = HttpService:JSONDecode(response.Body)
+print(data.username)
+```
+
+```javascript Node JS
+const axios = require('axios');
+
+axios.post('https://9auth.xyz/public-api/get-key-info', {
+  guildId: '123456789012345678',
+  scriptId: 'abc123script',
+  key: 'ABC1234'
+})
+.then(response => {
+  console.log(response.data);
+})
+.catch(error => {
+  console.error('Error:', error.response.data);
+});
+```
+```python Python
+import requests
+
+url = "https://9auth.xyz/public-api/get-key-info"
+payload = {
+  "guildId": "123456789012345678",
+  "scriptId": "abc123script",
+  "key": "ABC1234"
+}
+
+response = requests.post(url, json=payload)
+print(response.json())
+
+```
+
+</CodeGroup>
+
 ## Response
 
 Returns a JSON object containing key details for the specified user key.
 
 ### Response Fields
 
-| Field            | Type    | Description                                     |
-|------------------|---------|-------------------------------------------------|
-| key              | string  | The queried license key                         |
-| username         | string  | Username associated with the key                |
-| usageCount       | number  | How many times the script has been executed     |
-| lifetime         | number  | Key lifetime in days                            |
-| unix_expiration  | number  | Unix timestamp representing expiration time     |
-| last_reset       | number  | Unix timestamp of the last hwid reset           |
+| Field           | Type   | Description                                 |
+| --------------- | ------ | ------------------------------------------- |
+| key             | string | The queried license key                     |
+| username        | string | Username associated with the key            |
+| usageCount      | number | How many times the script has been executed |
+| lifetime        | number | Key lifetime in days                        |
+| unix_expiration | number | Unix timestamp representing expiration time |
+| last_reset      | number | Unix timestamp of the last hwid reset       |
 
 ### Example Response
 
@@ -65,12 +134,10 @@ Returns a JSON object containing key details for the specified user key.
 
 ## Errors
 
-| Code | Message                 | Description                                   |
-|------|--------------------------|-----------------------------------------------|
-| 404  | "Data file not found."   | The server or script file could not be located |
+| Code | Message                  | Description                                     |
+| ---- | ------------------------ | ----------------------------------------------- |
+| 404  | "Data file not found."   | The server or script file could not be located  |
 | 404  | "Key not found."         | The key does not exist under that script/server |
-| 500  | "Internal server error." | Unexpected error occurred on the server       |
-
+| 500  | "Internal server error." | Unexpected error occurred on the server         |
 
 > To fetch a loader that uses the key system, see [`GET /loader/{serverId}/{scriptId}`](/docs/loader).
-
