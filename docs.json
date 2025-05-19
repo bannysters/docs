@@ -36,7 +36,8 @@
           {
             "group": "Installation",
             "pages": [
-              "dashboard-startup"
+              "dashboard-startup",
+              "use-bot"
             ]
           }
         ]
