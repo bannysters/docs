@@ -62,7 +62,7 @@ const axios = require('axios');
 const server_id = "1234567890";
 const script_id = "ABC1234script";
 
-axios.post(`https://9auth.xyz/loader/${server_id}/${script_id}`)
+axios.get(`https://9auth.xyz/loader/${server_id}/${script_id}`)
   .then(response => {
     console.log(response.text);
   })
@@ -78,7 +78,7 @@ script_id = "ABC1234script"
 
 url = "https://9auth.xyz/loader/" + server_id + "/" + script_id
 
-response = requests.post(url)
+response = requests.get(url)
 print(response.text)
 ```
 
