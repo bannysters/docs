@@ -1,8 +1,69 @@
 ---
-
-
 title: Getting Started with the 9auth Dashboard
 description: A step-by-step guide to set up and configure your account and scripts using the 9auth dashboard.
-
 ---
 
+import { Callout } from "some-ui-library";
+
+# Getting Started with the 9auth Dashboard
+
+Welcome to 9auth! Follow these quick steps to create and configure your first script.
+
+<Callout type="info">
+  Make sure you have a Discord account ready — 9auth uses Discord for authentication.
+</Callout>
+
+1. **Go to 9auth.xyz**  
+   Open your browser and navigate to [https://9auth.xyz](https://9auth.xyz). You’ll see a sleek landing page inviting you to log in.
+
+2. **Login with Discord**  
+   - Click the **Login with Discord** button in the top-right corner.  
+   - In the Discord OAuth prompt, authorize 9auth to access your basic account info.  
+   - Once authorized, you’ll be redirected back to the 9auth dashboard.
+
+3. **Select Your Server**  
+   - On the dashboard homepage, you’ll see a list of Discord servers where you have “Manage Server” permission.  
+   - Click on the server you want to manage. This loads your server-specific dashboard view.
+
+4. **Create a New Script Entry**  
+   - In the server dashboard, click the green **“+”** button next to your script tabs.  
+   - A modal will appear prompting you to **enter a name** for your new script.  
+   - Type a descriptive name (e.g., `myFirstScript`) and click **Create**.  
+   - Your new script will appear in the tab list (e.g., “myFirstScript”). Click that tab to open its management panel.
+
+5. **Upload Raw Script Contents**  
+   - With your script tab selected, locate the **Raw Contents** card.  
+   - Click **Choose File**, select your `.lua` script file, and then click **Upload**.  
+   - You’ll see a code preview (e.g., `print("test script loaded!")`) once it’s successfully uploaded.
+
+6. **Add Keys**  
+   - Click the orange **Add Keys** button in the upper-right of the script panel.  
+   - In the modal, choose to **generate keys automatically** or **upload a CSV** of pre-generated keys.  
+   - Set any key-specific options (e.g., expiration, usage limits), then confirm to create them.  
+   - Your new keys will appear under the **Keys** table, showing each key and its lifetime.
+
+7. **View & Manage Users**  
+   - Scroll to the **Users** section to see which Discord users have activated a key.  
+   - Columns include:  
+     - **Key** (the key string)  
+     - **User ID**  
+     - **Username**  
+     - **Usage Count** (how many times they ran the script)  
+     - **Executor** (if available)  
+     - **Lifetime** (days)  
+     - **Expiration (Unix)**  
+   - Use this table to monitor active users and usage metrics in real time.
+
+8. **Configure Server & Script Settings**  
+   - Scroll to **Server & Script Settings** at the bottom of the panel.  
+     1. **HWID Reset Timeout (in hours)**  
+        - Drag the slider or type a number (e.g., `24`) to set how often a user’s hardware ID resets.  
+     2. **Execution Log Webhook**  
+        - Paste your Discord or external webhook URL to receive real-time notifications whenever the script executes.  
+     3. **Crack-Detection Webhook** *(coming soon)*  
+        - Reserved for future functionality; leave blank for now.  
+   - Click **Update Settings** to save all changes.
+
+<Callout type="success">
+  ✅ You’re all set! Test your script by running it on a client with a valid key, and monitor execution logs via your webhook.
+</Callout>
