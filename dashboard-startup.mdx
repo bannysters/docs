@@ -12,7 +12,7 @@ description: A step-by-step guide to set up and configure your account and scrip
    Open your browser and navigate to [https://9auth.xyz](https://9auth.xyz). You’ll see a sleek landing page inviting you to log in.
 
 2. **Login with Discord**  
-   - Click the **Login with Discord** button in the top-right corner.  
+   - Click the **Login with Discord** button.
    - In the Discord OAuth prompt, authorize 9auth to access your basic account info.  
    - Once authorized, you’ll be redirected back to the 9auth dashboard.
 
@@ -33,8 +33,8 @@ description: A step-by-step guide to set up and configure your account and scrip
 
 6. **Add Keys**  
    - Click the orange **Add Keys** button in the upper-right of the script panel.  
-   - In the modal, choose to **generate keys automatically** or **upload a CSV** of pre-generated keys.  
-   - Set any key-specific options (e.g., expiration, usage limits), then confirm to create them.  
+   - In the modal, choose the **lifetime** of all keys (1-90 days), and the **number of keys to generate.**
+   - Click add.
    - Your new keys will appear under the **Keys** table, showing each key and its lifetime.
 
 7. **View & Manage Users**  
@@ -52,9 +52,9 @@ description: A step-by-step guide to set up and configure your account and scrip
 8. **Configure Server & Script Settings**  
    - Scroll to **Server & Script Settings** at the bottom of the panel.  
      1. **HWID Reset Timeout (in hours)**  
-        - Drag the slider or type a number (e.g., `24`) to set how often a user’s hardware ID resets.  
+        - Drag the slider to set how often users can reset their hwid.
      2. **Execution Log Webhook**  
-        - Paste your Discord or external webhook URL to receive real-time notifications whenever the script executes.  
+        - Paste your Discord webhook URL to receive real-time notifications whenever the script executes.  
      3. **Crack-Detection Webhook** *(coming soon)*  
         - Reserved for future functionality; leave blank for now.  
    - Click **Update Settings** to save all changes.
