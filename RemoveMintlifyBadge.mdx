@@ -1,0 +1,16 @@
+import { useEffect } from 'react';
+
+export default function RemoveMintlifyBadge() {
+  useEffect(() => {
+    const elements = document.querySelectorAll('*');
+
+    elements.forEach((el) => {
+      if (el.textContent?.trim() === 'Powered by Mintlify') {
+        el.remove(); 
+      }
+    });
+  }, []);
+
+  return null; 
+}
+
