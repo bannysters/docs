@@ -24,7 +24,6 @@ The 9Auth bot lets both users and admins manage script access directly from Disc
 ```
 2. A dropdown menu will appear showing all scripts registered under this server.  
 3. **Select the script** you want to generate a panel for (e.g., `myFirstScript`).  
-4. Press **Enter**. The bot will post an interactive panel
 
 <Callout type="success">
 ✅ You’ve successfully posted a panel for “myFirstScript”! Users can now interact with the buttons to manage their own access.
@@ -50,29 +49,10 @@ Additionally, users can run these public commands in any channel (permissions pe
 
 Admins and script owners can manage access directly from Discord—no dashboard needed. Use the following slash commands:
 
-- **`/whitelist [user] [script] [days]`** - Grants the specified user access to the chosen script for X days.  
-```
-/whitelist @someUser myFirstScript 7
-```
-This gives **@someUser** a 7‑day key for **myFirstScript** immediately.
+- **`/whitelist [days] [user] `** - Grants the specified user access to the chosen script for X days. Run command, then select the script from the dropdown.
 
-- **`/blacklist [user] [script] [duration]`**  
-Blacklists a user from running a script for a set duration (in days).  
-```
+- **`/trial [hours] [user]`**  - Issues short‑term access (in hours) similar to a whitelist. Run command, then select the script from the downdown.
 
-/blacklist @troubleMaker myFirstScript 30
-
-```
-This prevents **@troubleMaker** from using **myFirstScript** for 30 days.
-
-- **`/trial [user] [script] [hours]`**  
-Issues short‑term access (in hours) similar to a whitelist.  
-```
-
-/trial @newUser myFirstScript 12
-
-```
-This gives **@newUser** a 12‑hour trial for **myFirstScript**.
 
 > **Note:** Only users with “Manage Server,” “Administrator,” or a designated “Script Owner” role can run these admin commands.
 
