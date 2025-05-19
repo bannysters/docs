@@ -41,14 +41,14 @@ Returns a JSON object containing key details for the specified user key.
 
 ### Response Fields
 
-| Field           | Type    | Description                                      |
-|------------------|---------|--------------------------------------------------|
+| Field            | Type    | Description                                     |
+|------------------|---------|-------------------------------------------------|
 | key              | string  | The queried license key                         |
 | username         | string  | Username associated with the key                |
-| usageCount       | number  | How many times the key has been used            |
+| usageCount       | number  | How many times the script has been executed     |
 | lifetime         | number  | Key lifetime in days                            |
 | unix_expiration  | number  | Unix timestamp representing expiration time     |
-| last_reset       | number  | Unix timestamp of the last reset                |
+| last_reset       | number  | Unix timestamp of the last hwid reset           |
 
 ### Example Response
 
