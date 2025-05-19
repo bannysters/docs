@@ -11,10 +11,10 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Platform",
+        "tab": "Overview",
         "groups": [
           {
-            "group": "Overview",
+            "group": "Info",
             "pages": [
               "index",
               "backend",
@@ -26,6 +26,17 @@
             "pages": [
               "dashboard",
               "bot"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Get Started",
+        "groups": [
+          {
+            "group": "Installation",
+            "pages": [
+              "dashboard-startup"
             ]
           }
         ]
