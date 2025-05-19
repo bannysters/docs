@@ -1,0 +1,100 @@
+---
+title: Getting Started with the 9Auth Bot
+description: A step-by-step guide to setting up and using the 9Auth Discord bot for managing script access.
+---
+
+import { Callout } from "some-ui-library";
+
+# Getting Started with the 9Auth Bot
+
+The 9Auth bot lets both users and admins manage script access directly from Discord. Follow these steps to get it up and running in your server.
+
+<Callout type="info">
+  Make sure you have “Manage Server” or “Administrator” permissions in your Discord server—these are required to invite and configure the bot.
+</Callout>
+
+## 1. Invite the Bot to Your Server  
+1. Go to the 9Auth website or use the bot invite link provided in your dashboard.  
+2. Select the target server where you want to enable 9Auth functionality.  
+3. Click **Authorize** and complete any CAPTCHA/permission prompts.  
+4. You should see **9Auth Bot** appear in your server’s member list.
+
+## 2. Create a Dedicated Channel for Script Panels  
+1. In your Discord server, create a new text channel (e.g., `#script-panel`, `#auth-portal`, or similar).  
+2. This channel will host “panels” for each script—allowing users to get keys, redeem them, retrieve loader info, and reset HWIDs.
+
+## 3. Post Your First Script Panel  
+1. In the newly created channel, type the slash command:  
+```
+/panel
+```
+2. A dropdown menu will appear showing all scripts registered under this server.  
+3. **Select the script** you want to generate a panel for (e.g., `myFirstScript`).  
+4. Press **Enter**. The bot will post an interactive panel
+
+<Callout type="success">
+✅ You’ve successfully posted a panel for “myFirstScript”! Users can now interact with the buttons to manage their own access.
+</Callout>
+
+## 4. Public Commands & Panel Buttons  
+
+Once a panel is posted, users can click the following buttons directly from Discord:
+
+- **Get Key** - Opens an ad link (if ad-driven keys are enabled) that awards a 1-day key when completed.
+- **Redeem** - Prompts the user to enter an existing key to redeem. If valid, they receive access to run the script.
+- **Get Script** - Sends the loader URL and key info to the user via DM. Ensures they have everything needed to load the script in their client.
+- **Reset HWID** - If the user’s hardware ID has expired or they’re eligible for a reset, this button resets their HWID so they can run the script again.
+
+> **Tip:** Users who have already redeemed a key can click **Get Script** again if they need to retrieve the loader link or key information at any time.
+
+Additionally, users can run these public commands in any channel (permissions permitting):
+
+- **`/panel [script]`** - If you want to create another panel in a different channel, just rerun `/panel` and pick the script.
+- **`/scripts`** - Lists all scripts that the user currently has active access to. Useful for quickly checking which scripts they’ve redeemed keys for.
+
+## 5. Admin Commands  
+
+Admins and script owners can manage access directly from Discord—no dashboard needed. Use the following slash commands:
+
+- **`/whitelist [user] [script] [days]`** - Grants the specified user access to the chosen script for X days.  
+```
+/whitelist @someUser myFirstScript 7
+```
+This gives **@someUser** a 7‑day key for **myFirstScript** immediately.
+
+- **`/blacklist [user] [script] [duration]`**  
+Blacklists a user from running a script for a set duration (in days).  
+```
+
+/blacklist @troubleMaker myFirstScript 30
+
+```
+This prevents **@troubleMaker** from using **myFirstScript** for 30 days.
+
+- **`/trial [user] [script] [hours]`**  
+Issues short‑term access (in hours) similar to a whitelist.  
+```
+
+/trial @newUser myFirstScript 12
+
+```
+This gives **@newUser** a 12‑hour trial for **myFirstScript**.
+
+> **Note:** Only users with “Manage Server,” “Administrator,” or a designated “Script Owner” role can run these admin commands.
+
+## 6. Best Practices & Tips  
+
+- **One Panel per Script**  
+- If you have multiple scripts, create separate panels (in separate channels or the same channel) by running `/panel` again and selecting a different script each time.  
+- **Channel Permissions**  
+- Lock down your **#script-panel** channel so that only users with roles you trust can post new panels.  
+- Allow @everyone to click buttons, but restrict “Send Messages” to admins/owners only.
+- **Updating a Panel**  
+- If you rename or re-upload a script in the dashboard, delete the old panel message in Discord, then rerun `/panel` to generate a fresh panel reflecting any changes.
+- **Monitoring Usage**  
+- Use `/scripts` to verify who currently has access.  
+- Check your 9Auth dashboard for detailed analytics on key redemptions and HWID resets.
+
+---
+
+You’re all set! Your Discord community can now claim keys, redeem them, and fetch their loader scripts entirely through Discord—no need to leave the server. Enjoy streamlined script access management with 9Auth!
