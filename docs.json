@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "willow",
+  "theme": "palm",
   "name": "9Auth Documentation",
   "colors": {
     "primary": "#0B6B2F",
