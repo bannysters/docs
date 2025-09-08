@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "aspen",
-  "name": "9Auth Documentation",
+  "name": "9Auth Docs",
   "colors": {
-    "primary": "#0B6B2F",
-    "light": "#00B56B",
-    "dark": "#003D26"
+    "primary": "#5B3F8D",
+    "light": "#A77BCA",
+    "dark": "#181818"
   },
   "favicon": "/favicon.svg",
   "navigation": {
